@@ -12,3 +12,5 @@ Hello! I am a first-year PhD student in Political Science at [Northwestern Unive
 Prior to Northwestern, I received my B.A. in Translation from [Beijing Foreign Studies University](http://www.bfsu.edu.cn/). I received my M.A. in Political Science from [Columbia University](https://polisci.columbia.edu/).
 
 You can find my CV [here](../assets/resume_new.pdf). 
+
+I am a German car fan, and I enjoying driving, hiking, playing piano. 
