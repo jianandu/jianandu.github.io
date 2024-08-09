@@ -13,4 +13,4 @@ Prior to Northwestern, I received my B.A. in Translation from [Beijing Foreign S
 
 You can find my CV [here](../assets/resume_new.pdf). 
 
-I am a German car fan, and I enjoying driving, hiking, playing piano. 
+I am a German car fan, and I enjoy driving, hiking, playing piano. 
