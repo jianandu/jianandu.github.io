@@ -1,9 +1,14 @@
 .decoration {
-    font-size: 18px;
-    color: #333;
     text-align: center;
+    margin-top: 20px;
     padding: 15px 0;
     background-color: #f8f8f8;
     border-top: 1px solid #ddd;
-    margin-top: 20px;
+}
+
+.chinese-poem {
+    font-family: "KaiTi", "STKaiti", "DFKai-SB", "楷体", serif; /* 行楷字体 */
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000; /* 黑色 */
 }
