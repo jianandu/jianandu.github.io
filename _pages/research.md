@@ -3,7 +3,7 @@ title: "Current Projects"
 layout: single
 permalink: /research/
 ---
-## Superstition
+## Superstition (with [Junyan Jiang](https://www.junyanjiang.com/))
 
 My research has two focal points: the causes of effects and the effects of causes. 
 
