@@ -3,9 +3,14 @@ title: "Current Projects"
 layout: single
 permalink: /research/
 ---
-# Superstition and its Implications in the Decision-Making Process 
- with Junyan Jiang
+# Superstition
 
-The Chinese Communist Party members have been long known for their atheist dispositions; however, we posit that:
-Irrational factors, such as superstition, could also influence their decision-making to a greater extent.We are trying to find evidence to show that superstition could exert significant influence on policy implementations.
+My research has two focal points
 
+## Why does superstition arise within a highly atheist government?
+
+My preliminary research reveals that bureaucrats, under fierce competition, are more likely to commit superstition in the face of uncertainty in the case of China. 
+
+## What effects does superstition have on the policy outcomes?
+
+This is an ongoing research, one that analyzes the alignment of Fengshui principles in urban planning; the other examines the dates in key projects based on "superstition" belief.
