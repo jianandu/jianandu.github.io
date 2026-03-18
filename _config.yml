@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 title                    : "Jianan Du"
-title_separator          : "-"
+title_separator          : " | "
 name                     : &name "Jianan Du"
 description              : &description "PhD Student, Comparative Politics | Northwestern University"
 url                      : https://jianandu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"

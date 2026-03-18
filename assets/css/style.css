@@ -18,7 +18,7 @@
 /* Hero section for homepage */
 .hero-section {
     position: relative;
-    height: 260px;
+    height: 240px;
     margin: -1.5em -1.5em 2em -1.5em;
     background-image: linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.94)),
                       url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1600&q=80');
@@ -33,12 +33,12 @@
 .hero-content {
     text-align: center;
     padding: 2rem;
-    max-width: 600px;
+    max-width: 700px;
 }
 
 .hero-content h1 {
     font-family: 'Literata', Georgia, serif;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 600;
     color: #111827;
     margin-bottom: 0.5rem;
@@ -46,7 +46,7 @@
 }
 
 .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #4b5563;
     margin: 0;
 }
@@ -63,6 +63,6 @@ bodypermalink- .page__title,
         margin: -1em -1em 1.5em -1em;
     }
     .hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 }
