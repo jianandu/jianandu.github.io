@@ -23,7 +23,7 @@
 
 .page {
   @include breakpoint($large) {
-    @include span(8.5 of 12 last);
+    @include full();
   }
 
   .page__inner-wrap {
