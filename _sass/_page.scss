@@ -6,21 +6,24 @@
   @include container;
   @include clearfix;
   margin-top: 3em;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
   min-height: calc(100vh - 200px);
 
+  @include breakpoint($large) {
+    max-width: 900px;
+  }
+
   @include breakpoint($x-large) {
-    max-width: $x-large;
+    max-width: 900px;
   }
 }
 
 .page {
   @include breakpoint($large) {
-    @include span(9 of 12 last);
-    @include prefix(0);
+    @include full();
   }
 
   .page__inner-wrap {
