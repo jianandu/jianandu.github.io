@@ -175,13 +175,13 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
-  background: $background-color;
+  background: transparent;
 
   a {
     display: block;
     margin: 0 1.25rem;
     padding: 0.6rem 0;
-    color: $masthead-link-color;
+    color: #e2e8f0;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
@@ -189,7 +189,7 @@
     transition: color 0.2s ease;
 
     &:hover {
-      color: $masthead-link-color-hover;
+      color: #81aff0;
     }
   }
 
@@ -200,8 +200,8 @@
     padding: 0 0.5rem;
     border: 0;
     outline: none;
-    background-color: $primary-color;
-    color: #fff;
+    background-color: #81aff0;
+    color: #1a1a1a;
     cursor: pointer;
     z-index: 100;
   }
