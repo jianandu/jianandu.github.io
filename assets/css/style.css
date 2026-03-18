@@ -2,15 +2,66 @@
     text-align: center;
     margin-top: 40px;
     padding: 30px 0;
-    background-color: #202020;
-    border-top: 1px solid #2d2d2d;
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
 }
 
 .chinese-poem {
     font-family: "KaiTi", "STKaiti", "DFKai-SB", "楷体", serif;
     font-size: 18px;
     line-height: 1.8;
-    color: #718096;
+    color: #6b7280;
     font-style: italic;
     letter-spacing: 0.05em;
+}
+
+/* Hero section for homepage */
+.hero-section {
+    position: relative;
+    height: 280px;
+    margin: -1.5em -1.5em 2em -1.5em;
+    background-image: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.95)),
+                      url('https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-family: 'Literata', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* Hide default page title on homepage */
+bodypermalink- .page__title,
+.page--home .page__title {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 220px;
+        margin: -1em -1em 1.5em -1em;
+    }
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
 }
