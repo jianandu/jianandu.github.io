@@ -5,9 +5,9 @@
 #main {
   @include container;
   @include clearfix;
-  margin-top: 2em;
-  padding-left: 1em;
-  padding-right: 1em;
+  margin-top: 2.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
@@ -36,7 +36,10 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  line-height: 1.2;
+  font-family: $header-font-family;
+  font-weight: 600;
+  color: $darker-gray;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -51,12 +54,24 @@
 .page__content {
 
   h2 {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.4em;
     border-bottom: 1px solid $border-color;
+    margin-top: 2em;
+    font-family: $header-font-family;
+    font-weight: 600;
+    color: $darker-gray;
+  }
+
+  h3 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    color: $dark-gray;
   }
 
   p, li, dl {
-    font-size: 1em;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: $text-color;
   }
 
   /* paragraph indents */

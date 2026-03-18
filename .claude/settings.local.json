@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle exec:*)",
+      "Bash(jekyll serve:*)",
+      "Bash(ruby:*)",
+      "Bash(choco --version)",
+      "Bash(winget --version)",
+      "Bash(winget install:*)",
+      "Bash(winget search:*)",
+      "Bash(export PATH=\"$PATH:/c/tools/ruby32/bin\")",
+      "Read(//c/Program Files/**)",
+      "Read(//c//**)",
+      "Read(//c/Users/ASUS/jianandu.github.io/$HOME/AppData/Local/Programs/**)",
+      "Bash(cmd.exe /c \"where ruby\")",
+      "Bash(powershell.exe -Command \"Get-Command ruby -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(git add:*)"
+    ]
+  }
+}

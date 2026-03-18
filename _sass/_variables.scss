@@ -13,9 +13,9 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* system typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace                  : Monaco, Consolas, "Lucida Console", monospace;
+$serif                      : "Literata", "Georgia", Times, serif;
+$sans-serif                 : "Source Sans 3", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$monospace                  : "JetBrains Mono", Monaco, Consolas, "Lucida Console", monospace;
 
 /* sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;
@@ -29,7 +29,7 @@ $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
 $global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
+$header-font-family         : $serif;
 $caption-font-family        : $serif;
 
 /* type scale */
@@ -55,24 +55,24 @@ $sidebar-link-max-width     : 250px;
    Colors
    ========================================================================== */
 
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-$lighter-gray               : mix(#fff, $gray, 90%);
+$gray                       : #5a6268;
+$dark-gray                  : #2d3748;
+$darker-gray                : #1a202c;
+$light-gray                 : #e2e8f0;
+$lighter-gray               : #f7fafc;
 
 $body-color                 : #fff;
 $background-color           : #fff;
-$code-background-color      : #fafafa;
+$code-background-color      : #f7fafc;
 $code-background-color-dark : $light-gray;
-$text-color                 : $dark-gray;
-$border-color               : $lighter-gray;
+$text-color                 : #2d3748;
+$border-color               : #e2e8f0;
 
-$primary-color              : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
-$danger-color               : #ee5f5b;
-$info-color                 : #52adc8;
+$primary-color              : #2c5282;
+$success-color              : #38a169;
+$warning-color              : #d69e2e;
+$danger-color               : #e53e3e;
+$info-color                : #3182ce;
 
 /* brands */
 $behance-color              : #1769FF;

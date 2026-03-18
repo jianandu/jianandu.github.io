@@ -1,14 +1,16 @@
 .decoration {
     text-align: center;
-    margin-top: 20px;
-    padding: 15px 0;
-    background-color: #f8f8f8;
-    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    padding: 30px 0;
+    background-color: #fafbfc;
+    border-top: 1px solid #e2e8f0;
 }
 
 .chinese-poem {
-    font-family: "KaiTi", "STKaiti", "DFKai-SB", "楷体", serif; /* 行楷字体 */
-    font-size: 20px;
-    line-height: 1.5;
-    color: #000; /* 黑色 */
+    font-family: "KaiTi", "STKaiti", "DFKai-SB", "楷体", serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4a5568;
+    font-style: italic;
+    letter-spacing: 0.05em;
 }

@@ -13,7 +13,9 @@ body {
   padding-bottom: 9em;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
@@ -94,13 +96,17 @@ abbr[data-original-title] {
 
 blockquote {
   margin: 2em 1em 2em 0;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0.5em 1em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
+  border-left: 3px solid $primary-color;
+  background: #fafbfc;
+  color: $gray;
 
   cite {
     font-style: italic;
+    display: block;
+    margin-top: 0.5em;
+    font-size: $type-size-6;
 
     &:before {
       content: "\2014";
@@ -112,6 +118,11 @@ blockquote {
 /* links */
 
 a {
+  color: $link-color;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+
   &:focus {
     @extend %tab-focus;
   }
@@ -119,6 +130,7 @@ a {
   &:hover,
   &:active {
     outline: 0;
+    border-bottom-color: $link-color;
   }
 }
 
@@ -155,9 +167,10 @@ td > code {
 
 hr {
   display: block;
-  margin: 1em 0;
+  margin: 2em 0;
   border: 0;
   border-top: 1px solid $border-color;
+  border-bottom: 1px solid transparent;
 }
 
 /* lists */

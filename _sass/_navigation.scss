@@ -179,10 +179,14 @@
 
   a {
     display: block;
-    margin: 0 1rem;
-    padding: 0.5rem 0;
+    margin: 0 1.25rem;
+    padding: 0.6rem 0;
     color: $masthead-link-color;
     text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
 
     &:hover {
       color: $masthead-link-color-hover;
@@ -210,7 +214,7 @@
       vertical-align: middle;
 
       &:first-child {
-        font-weight: bold;
+        font-weight: 600;
         text-wrap: wrap;
 
         a {
