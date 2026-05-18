@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <title>Jianan Du — Political Science, Northwestern University</title>
+  <title data-i18n="title">Jianan Du — Political Science, Northwestern University</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+SC:wght@400;600&family=Liu+Jian+Mao+Cao&display=swap"
     as="style"
     onload="this.onload=null;this.rel='stylesheet'"
   />
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+SC:wght@400;600&family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet" />
   </noscript>
   <style>
-    /* ── Tokens ── */
     :root {
       --bg:        #ffffff;
       --bg-subtle: #f7f7f5;
@@ -47,7 +46,6 @@
       }
     }
 
-    /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 24px); }
     @media (prefers-reduced-motion: reduce) {
@@ -62,145 +60,124 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
+    /* 中文时切换字体 */
+    html[lang="zh"] body {
+      font-family: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+    html[lang="zh"] h1,
+    html[lang="zh"] h2 {
+      font-family: 'Noto Serif SC', 'Songti SC', 'STSong', Georgia, serif;
+      letter-spacing: 0.02em;
+    }
+    /* 行草书法姓名 */
+    h1.zh-name {
+      font-family: 'Liu Jian Mao Cao', cursive !important;
+      font-size: clamp(3rem, 8vw, 4.5rem) !important;
+      letter-spacing: 0.12em !important;
+      line-height: 1.1 !important;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
-    /* ── Skip link ── */
     .skip-link {
-      position: absolute;
-      top: -999px;
-      left: 16px;
-      background: var(--accent);
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      font-weight: 500;
-      z-index: 100;
+      position: absolute; top: -999px; left: 16px;
+      background: var(--accent); color: #fff;
+      padding: 8px 16px; border-radius: var(--radius-sm);
+      font-size: 0.875rem; font-weight: 500; z-index: 100;
       transition: top 0.2s;
     }
     .skip-link:focus { top: 16px; }
 
     /* ── Nav ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       height: var(--nav-h);
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       border-bottom: 1px solid var(--border);
       background: color-mix(in srgb, var(--bg) 85%, transparent);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
     .nav-inner {
-      width: 100%;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      width: 100%; max-width: var(--max-w);
+      margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
     }
     .nav-name {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--text);
-      letter-spacing: -0.01em;
-      white-space: nowrap;
+      font-size: 0.9375rem; font-weight: 600;
+      color: var(--text); letter-spacing: -0.01em; white-space: nowrap;
     }
-    .nav-links {
-      display: flex;
-      gap: 4px;
-      list-style: none;
-    }
+    .nav-right { display: flex; align-items: center; gap: 4px; }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
     .nav-links a {
-      display: block;
-      padding: 6px 12px;
+      display: block; padding: 6px 12px;
       border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      color: var(--text-2);
-      font-weight: 500;
+      font-size: 0.875rem; color: var(--text-2); font-weight: 500;
       transition: color 0.15s, background 0.15s;
     }
-    .nav-links a:hover {
-      color: var(--text);
+    .nav-links a:hover { color: var(--text); background: var(--bg-subtle); text-decoration: none; }
+    .nav-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* ── 语言切换按钮 ── */
+    .lang-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 32px; min-width: 48px; padding: 0 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
       background: var(--bg-subtle);
-      text-decoration: none;
+      color: var(--text-2);
+      font-size: 0.8125rem; font-weight: 600;
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s, border-color 0.15s, transform 0.15s;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      letter-spacing: 0.02em;
+      user-select: none;
     }
-    .nav-links a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
+    .lang-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-2); transform: translateY(-1px); }
+    .lang-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .lang-btn:active { transform: translateY(0); }
 
     /* ── Layout ── */
-    main {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px 96px;
-    }
+    main { max-width: var(--max-w); margin: 0 auto; padding: 0 24px 96px; }
 
     /* ── Hero ── */
-    .hero {
-      padding: 80px 0 64px;
-      border-bottom: 1px solid var(--border);
-    }
+    .hero { padding: 80px 0 64px; border-bottom: 1px solid var(--border); }
     .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.8125rem; font-weight: 500; color: var(--accent);
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px;
     }
+    html[lang="zh"] .hero-label { text-transform: none; letter-spacing: 0.06em; }
     .hero-label::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
+      content: ''; display: block; width: 20px; height: 2px;
+      background: var(--accent); border-radius: 2px;
     }
     .hero h1 {
       font-family: 'Lora', Georgia, serif;
       font-size: clamp(2.25rem, 5vw, 3rem);
-      font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      text-wrap: balance;
-      margin-bottom: 24px;
+      font-weight: 600; line-height: 1.15;
+      letter-spacing: -0.02em; color: var(--text);
+      text-wrap: balance; margin-bottom: 24px;
     }
     .hero-bio {
-      font-size: 1.0625rem;
-      color: var(--text-2);
-      max-width: 600px;
-      line-height: 1.75;
-      margin-bottom: 32px;
+      font-size: 1.0625rem; color: var(--text-2);
+      max-width: 600px; line-height: 1.75; margin-bottom: 32px;
     }
     .hero-bio strong { color: var(--text); font-weight: 500; }
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      font-weight: 500;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: var(--radius-sm);
+      font-size: 0.875rem; font-weight: 500;
       transition: opacity 0.15s, transform 0.15s, background 0.15s;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
-      cursor: pointer;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent; cursor: pointer;
     }
     .btn:hover { text-decoration: none; opacity: 0.85; transform: translateY(-1px); }
     .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -211,130 +188,80 @@
     section { padding: 64px 0; border-bottom: 1px solid var(--border); }
     section:last-child { border-bottom: none; }
     .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 32px;
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 32px;
     }
+    html[lang="zh"] .section-label { text-transform: none; letter-spacing: 0.1em; }
     h2 {
       font-family: 'Lora', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      line-height: 1.3;
-      text-wrap: balance;
+      font-size: 1.5rem; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--text);
+      line-height: 1.3; text-wrap: balance;
       scroll-margin-top: calc(var(--nav-h) + 24px);
     }
-    h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.4;
-    }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); line-height: 1.4; }
 
-    /* ── Research cards ── */
+    /* ── Cards ── */
     .research-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 16px;
-      margin-top: 32px;
+      gap: 16px; margin-top: 32px;
     }
     .card {
-      padding: 24px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--bg-subtle);
+      padding: 24px; border: 1px solid var(--border);
+      border-radius: var(--radius); background: var(--bg-subtle);
       transition: border-color 0.15s, transform 0.15s;
     }
     .card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .card-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--accent-2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      font-size: 1.1rem;
-      aria-hidden: true;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--accent-2); display: flex;
+      align-items: center; justify-content: center;
+      margin-bottom: 16px; font-size: 1.1rem;
     }
     .card h3 { margin-bottom: 8px; }
     .card p { font-size: 0.9rem; color: var(--text-2); line-height: 1.65; }
 
-    /* ── Education timeline ── */
-    .edu-list {
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    /* ── Education ── */
+    .edu-list { margin-top: 32px; display: flex; flex-direction: column; }
     .edu-item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 24px;
-      padding: 24px 0;
-      border-top: 1px solid var(--border);
+      display: grid; grid-template-columns: 120px 1fr;
+      gap: 24px; padding: 24px 0; border-top: 1px solid var(--border);
     }
     .edu-item:first-child { border-top: none; padding-top: 0; }
     .edu-year {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--text-3);
-      font-variant-numeric: tabular-nums;
-      padding-top: 3px;
+      font-size: 0.8125rem; font-weight: 500; color: var(--text-3);
+      font-variant-numeric: tabular-nums; padding-top: 3px;
     }
     .edu-body h3 { margin-bottom: 4px; font-size: 0.9375rem; }
     .edu-body p { font-size: 0.875rem; color: var(--text-2); }
     .edu-tag {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      background: var(--accent-2);
-      color: var(--accent);
+      display: inline-block; margin-top: 8px; padding: 3px 10px;
+      border-radius: 999px; font-size: 0.75rem; font-weight: 500;
+      background: var(--accent-2); color: var(--accent);
     }
 
     /* ── Interests ── */
-    .interest-list {
-      margin-top: 24px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .interest-list { margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap; }
     .interest-chip {
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.875rem;
-      color: var(--text-2);
-      background: var(--bg-subtle);
+      padding: 6px 14px; border: 1px solid var(--border);
+      border-radius: 999px; font-size: 0.875rem;
+      color: var(--text-2); background: var(--bg-subtle);
       transition: border-color 0.15s, color 0.15s;
     }
     .interest-chip:hover { border-color: var(--accent); color: var(--text); }
 
     /* ── Footer ── */
     footer {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 32px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      border-top: 1px solid var(--border);
+      max-width: var(--max-w); margin: 0 auto; padding: 32px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border);
     }
     footer p { font-size: 0.8125rem; color: var(--text-3); }
     footer a { font-size: 0.8125rem; color: var(--text-2); }
     footer a:hover { color: var(--text); }
 
-    /* ── Responsive ── */
     @media (max-width: 480px) {
       .nav-links { display: none; }
       .edu-item { grid-template-columns: 1fr; gap: 4px; }
@@ -345,121 +272,119 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
 
   <nav aria-label="Site navigation">
     <div class="nav-inner">
-      <span class="nav-name">Jianan Du</span>
-      <ul class="nav-links" role="list">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#cv" aria-label="Download CV (PDF)">CV</a></li>
-      </ul>
+      <span class="nav-name">Jianan Du · 杜佳楠</span>
+      <div class="nav-right">
+        <ul class="nav-links" role="list">
+          <li><a href="#about"     data-i18n="nav.about">About</a></li>
+          <li><a href="#research"  data-i18n="nav.research">Research</a></li>
+          <li><a href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a href="#cv"        data-i18n="nav.cv">CV</a></li>
+        </ul>
+        <button class="lang-btn" id="langToggle" aria-label="Switch to Chinese" onclick="toggleLang()">中文</button>
+      </div>
     </div>
   </nav>
 
   <main id="main">
 
-    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-heading">
-      <p class="hero-label">PhD Student · Year&nbsp;2</p>
+      <p class="hero-label" data-i18n="hero.label">PhD Student · Year&nbsp;2</p>
       <h1 id="hero-heading">Jianan Du</h1>
-      <p class="hero-bio">
+      <p class="hero-bio" data-i18n="hero.bio">
         Second-year PhD student in <strong>Political Science</strong> at
         <strong>Northwestern University</strong>, studying how bureaucracy and
         religion shape state capacity and political order — with a focus on
         <strong>contemporary China</strong>.
       </p>
       <div class="hero-actions">
-        <a href="/cv.pdf" class="btn btn-primary" aria-label="Download CV as PDF">
+        <a href="/cv.pdf" class="btn btn-primary" data-i18n-aria="hero.cvAria">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download CV
+          <span data-i18n="hero.cvBtn">Download CV</span>
         </a>
-        <a href="#research" class="btn btn-secondary">View Research</a>
+        <a href="#research" class="btn btn-secondary" data-i18n="hero.researchBtn">View Research</a>
       </div>
     </section>
 
-    <!-- Research -->
     <section id="research" aria-labelledby="research-heading">
-      <p class="section-label">Scholarship</p>
-      <h2 id="research-heading">Research Interests</h2>
+      <p class="section-label" data-i18n="research.label">Scholarship</p>
+      <h2 id="research-heading" data-i18n="research.heading">Research Interests</h2>
       <div class="research-grid">
         <div class="card">
           <div class="card-icon" aria-hidden="true">🏛️</div>
-          <h3>Bureaucracy & State Capacity</h3>
-          <p>Examining how bureaucratic structures shape governance, policy implementation, and state power in authoritarian regimes.</p>
+          <h3 data-i18n="research.card1.title">Bureaucracy &amp; State Capacity</h3>
+          <p data-i18n="research.card1.body">Examining how bureaucratic structures shape governance, policy implementation, and state power in authoritarian regimes.</p>
         </div>
         <div class="card">
           <div class="card-icon" aria-hidden="true">✦</div>
-          <h3>Religion & Politics</h3>
-          <p>Investigating the intersection of religious institutions and political authority, legitimacy, and social control in China.</p>
+          <h3 data-i18n="research.card2.title">Religion &amp; Politics</h3>
+          <p data-i18n="research.card2.body">Investigating the intersection of religious institutions and political authority, legitimacy, and social control in China.</p>
         </div>
         <div class="card">
           <div class="card-icon" aria-hidden="true">🌏</div>
-          <h3>Chinese Politics</h3>
-          <p>Comparative and empirical work on political dynamics, institutional change, and party-state relations in the PRC.</p>
+          <h3 data-i18n="research.card3.title">Chinese Politics</h3>
+          <p data-i18n="research.card3.body">Comparative and empirical work on political dynamics, institutional change, and party-state relations in the PRC.</p>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
     <section id="education" aria-labelledby="edu-heading">
-      <p class="section-label">Background</p>
-      <h2 id="edu-heading">Education</h2>
+      <p class="section-label" data-i18n="edu.label">Background</p>
+      <h2 id="edu-heading" data-i18n="edu.heading">Education</h2>
       <div class="edu-list">
         <div class="edu-item">
           <span class="edu-year">2024 –<br />Present</span>
           <div class="edu-body">
-            <h3>Northwestern University</h3>
-            <p>PhD in Political Science</p>
-            <span class="edu-tag">In Progress</span>
+            <h3 data-i18n="edu.nw.name">Northwestern University</h3>
+            <p data-i18n="edu.nw.degree">PhD in Political Science</p>
+            <span class="edu-tag" data-i18n="edu.inProgress">In Progress</span>
           </div>
         </div>
         <div class="edu-item">
           <span class="edu-year">2022 –<br />2024</span>
           <div class="edu-body">
-            <h3>Columbia University</h3>
-            <p>MA in Political Science</p>
+            <h3 data-i18n="edu.columbia.name">Columbia University</h3>
+            <p data-i18n="edu.columbia.degree">MA in Political Science</p>
           </div>
         </div>
         <div class="edu-item">
           <span class="edu-year">2018 –<br />2022</span>
           <div class="edu-body">
-            <h3>Beijing Foreign Studies University</h3>
-            <p>BA in Translation</p>
+            <h3 data-i18n="edu.bfsu.name">Beijing Foreign Studies University</h3>
+            <p data-i18n="edu.bfsu.degree">BA in Translation</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About / Interests -->
     <section id="about" aria-labelledby="about-heading">
-      <p class="section-label">Personal</p>
-      <h2 id="about-heading">Beyond the Desk</h2>
-      <p style="margin-top:16px; color: var(--text-2); font-size: 0.9375rem; max-width: 520px;">
+      <p class="section-label" data-i18n="about.label">Personal</p>
+      <h2 id="about-heading" data-i18n="about.heading">Beyond the Desk</h2>
+      <p style="margin-top:16px; color: var(--text-2); font-size: 0.9375rem; max-width: 520px;" data-i18n="about.body">
         When not thinking about comparative politics, you'll find me behind the wheel,
         out on a trail, or at the piano.
       </p>
       <div class="interest-list" role="list">
-        <span class="interest-chip" role="listitem">🚗 Automotive</span>
-        <span class="interest-chip" role="listitem">🛣️ Driving</span>
-        <span class="interest-chip" role="listitem">🥾 Hiking</span>
-        <span class="interest-chip" role="listitem">🎹 Piano</span>
+        <span class="interest-chip" role="listitem" data-i18n="about.auto">🚗 Automotive</span>
+        <span class="interest-chip" role="listitem" data-i18n="about.drive">🛣️ Driving</span>
+        <span class="interest-chip" role="listitem" data-i18n="about.hike">🥾 Hiking</span>
+        <span class="interest-chip" role="listitem" data-i18n="about.piano">🎹 Piano</span>
       </div>
     </section>
 
-    <!-- CV -->
     <section id="cv" aria-labelledby="cv-heading">
-      <p class="section-label">Documents</p>
-      <h2 id="cv-heading">Curriculum Vitae</h2>
-      <p style="margin-top:16px; color: var(--text-2); font-size: 0.9375rem; max-width: 480px;">
+      <p class="section-label" data-i18n="cv.label">Documents</p>
+      <h2 id="cv-heading" data-i18n="cv.heading">Curriculum Vitae</h2>
+      <p style="margin-top:16px; color: var(--text-2); font-size: 0.9375rem; max-width: 480px;" data-i18n="cv.body">
         Full details on publications, conference presentations, teaching experience, and awards.
       </p>
       <div style="margin-top:24px;">
-        <a href="/cv.pdf" class="btn btn-primary" aria-label="Download full CV as PDF">
+        <a href="/cv.pdf" class="btn btn-primary" data-i18n-aria="cv.dlAria">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download CV (PDF)
+          <span data-i18n="cv.dlBtn">Download CV (PDF)</span>
         </a>
       </div>
     </section>
@@ -467,9 +392,146 @@
   </main>
 
   <footer>
-    <p>© 2026 Jianan Du · Northwestern University</p>
-    <a href="mailto:jiananDu@example.com">Get in touch</a>
+    <p data-i18n="footer.copy">© 2026 Jianan Du · Northwestern University</p>
+    <a href="mailto:jiananDu@example.com" data-i18n="footer.contact">Get in touch</a>
   </footer>
 
+  <script>
+    const t = {
+      en: {
+        title:               'Jianan Du — Political Science, Northwestern University',
+        skip:                'Skip to main content',
+        'nav.about':         'About',
+        'nav.research':      'Research',
+        'nav.education':     'Education',
+        'nav.cv':            'CV',
+        'hero.label':        'PhD Student · Year 2',
+        'hero.bio':          'Second-year PhD student in <strong>Political Science</strong> at <strong>Northwestern University</strong>, studying how bureaucracy and religion shape state capacity and political order — with a focus on <strong>contemporary China</strong>.',
+        'hero.cvBtn':        'Download CV',
+        'hero.cvAria':       'Download CV as PDF',
+        'hero.researchBtn':  'View Research',
+        'research.label':    'Scholarship',
+        'research.heading':  'Research Interests',
+        'research.card1.title': 'Bureaucracy & State Capacity',
+        'research.card1.body':  'Examining how bureaucratic structures shape governance, policy implementation, and state power in authoritarian regimes.',
+        'research.card2.title': 'Religion & Politics',
+        'research.card2.body':  'Investigating the intersection of religious institutions and political authority, legitimacy, and social control in China.',
+        'research.card3.title': 'Chinese Politics',
+        'research.card3.body':  'Comparative and empirical work on political dynamics, institutional change, and party-state relations in the PRC.',
+        'edu.label':         'Background',
+        'edu.heading':       'Education',
+        'edu.nw.name':       'Northwestern University',
+        'edu.nw.degree':     'PhD in Political Science',
+        'edu.columbia.name': 'Columbia University',
+        'edu.columbia.degree':'MA in Political Science',
+        'edu.bfsu.name':     'Beijing Foreign Studies University',
+        'edu.bfsu.degree':   'BA in Translation',
+        'edu.inProgress':    'In Progress',
+        'about.label':       'Personal',
+        'about.heading':     'Beyond the Desk',
+        'about.body':        "When not thinking about comparative politics, you'll find me behind the wheel, out on a trail, or at the piano.",
+        'about.auto':        '🚗 Automotive',
+        'about.drive':       '🛣️ Driving',
+        'about.hike':        '🥾 Hiking',
+        'about.piano':       '🎹 Piano',
+        'cv.label':          'Documents',
+        'cv.heading':        'Curriculum Vitae',
+        'cv.body':           'Full details on publications, conference presentations, teaching experience, and awards.',
+        'cv.dlBtn':          'Download CV (PDF)',
+        'cv.dlAria':         'Download full CV as PDF',
+        'footer.copy':       '© 2026 Jianan Du · Northwestern University',
+        'footer.contact':    'Get in touch',
+      },
+      zh: {
+        title:               '杜佳楠 — 西北大学政治学系',
+        skip:                '跳转至主要内容',
+        'nav.about':         '关于我',
+        'nav.research':      '研究',
+        'nav.education':     '教育经历',
+        'nav.cv':            '简历',
+        'hero.label':        '政治学博士在读 · 二年级',
+        'hero.bio':          '就读于<strong>西北大学</strong>政治学系，博士二年级。主要关注<strong>官僚体制</strong>与<strong>宗教</strong>议题，尤其是二者如何影响国家治理能力与政治秩序，研究对象以<strong>当代中国</strong>为核心。',
+        'hero.cvBtn':        '下载简历',
+        'hero.cvAria':       '下载 PDF 格式简历',
+        'hero.researchBtn':  '了解研究方向',
+        'research.label':    '学术研究',
+        'research.heading':  '研究方向',
+        'research.card1.title': '官僚体制与国家能力',
+        'research.card1.body':  '聚焦威权国家中官僚体系的运作逻辑，探究其对政策执行效率与国家治理方式的深层影响。',
+        'research.card2.title': '宗教与政治',
+        'research.card2.body':  '考察宗教组织与国家权力之间的互动关系，关注政治合法性建构与社会管控等核心议题在中国的具体呈现。',
+        'research.card3.title': '中国政治',
+        'research.card3.body':  '运用比较政治学与实证方法，研究中国党政体制的演变逻辑与制度运作机制。',
+        'edu.label':         '求学经历',
+        'edu.heading':       '教育背景',
+        'edu.nw.name':       '西北大学',
+        'edu.nw.degree':     '政治学博士（在读）',
+        'edu.columbia.name': '哥伦比亚大学',
+        'edu.columbia.degree':'政治学硕士',
+        'edu.bfsu.name':     '北京外国语大学',
+        'edu.bfsu.degree':   '翻译学学士',
+        'edu.inProgress':    '在读',
+        'about.label':       '生活',
+        'about.heading':     '课题之外',
+        'about.body':        '平时喜欢开车、徒步，偶尔弹弹钢琴。',
+        'about.auto':        '🚗 汽车',
+        'about.drive':       '🛣️ 驾驶',
+        'about.hike':        '🥾 徒步',
+        'about.piano':       '🎹 钢琴',
+        'cv.label':          '资料下载',
+        'cv.heading':        '个人简历',
+        'cv.body':           '涵盖学术发表、会议报告、教学经历及所获奖项等完整信息。',
+        'cv.dlBtn':          '下载简历（PDF）',
+        'cv.dlAria':         '下载完整 PDF 简历',
+        'footer.copy':       '© 2026 杜佳楠 · 西北大学',
+        'footer.contact':    '联系我',
+      }
+    };
+
+    let current = localStorage.getItem('lang') || 'en';
+
+    function applyLang(lang) {
+      const dict = t[lang];
+      document.documentElement.lang = lang;
+      document.title = dict.title;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        const key = el.dataset.i18nAria;
+        if (dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+      });
+
+      // 姓名：中文切换为行草「杜佳楠」
+      const h1 = document.getElementById('hero-heading');
+      if (lang === 'zh') {
+        h1.textContent = '杜佳楠';
+        h1.classList.add('zh-name');
+      } else {
+        h1.textContent = 'Jianan Du';
+        h1.classList.remove('zh-name');
+      }
+
+      const btn = document.getElementById('langToggle');
+      if (lang === 'en') {
+        btn.textContent = '中文';
+        btn.setAttribute('aria-label', 'Switch to Chinese');
+      } else {
+        btn.textContent = 'EN';
+        btn.setAttribute('aria-label', '切换为英文');
+      }
+
+      localStorage.setItem('lang', lang);
+      current = lang;
+    }
+
+    function toggleLang() {
+      applyLang(current === 'en' ? 'zh' : 'en');
+    }
+
+    applyLang(current);
+  </script>
 </body>
 </html>
